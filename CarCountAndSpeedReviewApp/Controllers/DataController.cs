@@ -41,7 +41,6 @@ namespace CarCountAndSpeedReviewApp.Controllers
             var hourlyAverageSpeeds = dateRoadEntries
                 .GroupBy(e => e.TimeOfRecord.Hour)
                 .Select(g => new { Hour = g.Key, AverageSpeed = g.Average(e => e.Speed) })
-                .OrderBy(a => a.Hour)
                 .ToList();
                 
 
