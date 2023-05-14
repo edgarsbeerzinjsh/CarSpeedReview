@@ -23,14 +23,15 @@ namespace CarCountAndSpeedReviewApp.Controllers
         public IActionResult Get([FromQuery] string date = "0000-00-00")
         {
 
-            var roadEntries = _context.RoadEntries.OrderBy(time => time.TimeOfRecord);
+            var roadEntries = _context.RoadEntries;
 
             if (date == "0000-00-00")
             {
                 var distinctDates = roadEntries
                     .Select(time => time.TimeOfRecord.Date.ToString("yyyy-MM-dd"))
                     .Distinct()
-                    .ToList();
+                    .ToList()
+                    .Order();
                 return Ok(distinctDates);
             }
 
@@ -39,8 +40,10 @@ namespace CarCountAndSpeedReviewApp.Controllers
 
             var hourlyAverageSpeeds = dateRoadEntries
                 .GroupBy(e => e.TimeOfRecord.Hour)
-                .Select(g => new {Hour = g.Key, AverageSpeed = g.Average(e => e.Speed)})
+                .Select(g => new { Hour = g.Key, AverageSpeed = g.Average(e => e.Speed) })
+                .OrderBy(a => a.Hour)
                 .ToList();
+                
 
             return Ok(hourlyAverageSpeeds);
         }
