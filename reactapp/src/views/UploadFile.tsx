@@ -2,6 +2,7 @@ import { ChangeEvent, useState } from "react";
 import { RoadEntries } from "../components/types/RoadEntries";
 import { stringToRoadEntryArray } from "../components/helperFunctions/uploadContentToRoadEntriesList";
 import { SERVER_URL } from "../components/constants/ServerUrl";
+import { splitContent } from "../components/helperFunctions/splitInputContentInBatches";
 
 export const UploadFile = () => {
 	const [file, setFile] = useState<File>();
@@ -30,24 +31,25 @@ export const UploadFile = () => {
 	};
 
 	const handleUploadClick = () => {
-		setIsLoading(true);
 		if (!file) {
 			return;
 		}
 
-		textEntries?.map(async (line) => {
-			await fetch(SERVER_URL, {
-				method: "POST",
-				body: JSON.stringify(line),
-				headers: {
-					"content-type": "application/json",
-				},
-			})
-				.then((res) => res.json())
-				// .then((data) => console.log(data))
-				.catch((err) => console.error(err));
-		});
-		setIsLoading(false);
+		if (!!textEntries) {
+			setIsLoading(true);
+			splitContent(textEntries).forEach(async (batch) => {
+				await fetch(SERVER_URL, {
+					method: "POST",
+					body: JSON.stringify(batch),
+					headers: {
+						"content-type": "application/json",
+					},
+				})
+					.then((res) => res.json())
+					.catch((err) => console.error(err));
+			});
+			setIsLoading(false);
+		}
 	};
 
 	return (

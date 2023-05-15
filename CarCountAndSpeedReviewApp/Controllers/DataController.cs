@@ -12,7 +12,6 @@ namespace CarCountAndSpeedReviewApp.Controllers
     [ApiController]
     public class DataController : ControllerBase
     {
-        private static readonly ReaderWriterLockSlim entryWriteLockLock = new ReaderWriterLockSlim();
         private readonly RoadEntriesDbContext _context;
         public DataController(RoadEntriesDbContext context)
         {
@@ -48,20 +47,12 @@ namespace CarCountAndSpeedReviewApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(RoadEntries data)
+        public async Task<IActionResult> Post(List<RoadEntries> batch)
         {
-            entryWriteLockLock.EnterWriteLock();
-            try
-            {
-                _context.RoadEntries.Add(data);
-                _context.SaveChanges();
-            }
-            finally
-            {
-                entryWriteLockLock.ExitWriteLock();
-            }
+            _context.RoadEntries.AddRange(batch);
+            await _context.SaveChangesAsync();
 
-            return Ok(data);
+            return Ok();
         }
 
         [Route("filtered")]
