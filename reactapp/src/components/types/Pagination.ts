@@ -1,8 +1,3 @@
-// export type Pagination = {
-// 	page: number;
-// 	itemsPerPage: number;
-// };
-
 export type PaginationData = {
 	CurrentPage: number,
     TotalCount: number,

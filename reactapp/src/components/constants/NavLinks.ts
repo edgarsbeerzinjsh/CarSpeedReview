@@ -1,9 +1,5 @@
 export const NAV_PAGES = [
     {
-        title: "Home",
-        path: "/",
-    },
-    {
         title: "Data",
         path: "/data",
     },
@@ -13,6 +9,6 @@ export const NAV_PAGES = [
     },
     {
         title: "Upload",
-        path: "/upload",
+        path: "/",
     },
 ];

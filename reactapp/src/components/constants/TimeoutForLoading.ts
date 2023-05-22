@@ -1,0 +1,1 @@
+export const TIMOUT_MS = 700;

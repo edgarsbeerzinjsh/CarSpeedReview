@@ -13,7 +13,7 @@ const lineToRoadEntry = (line: string) => {
     const oneEntry = {
         timeOfRecord: moment.utc(parameters[0], "YYYY-MM-DD HH:mm:ss").toISOString(),
         speed: +parameters[1],
-        carRegistration: parameters[2],
+        carRegistrationNumber: parameters[2],
     };
 
     return oneEntry;

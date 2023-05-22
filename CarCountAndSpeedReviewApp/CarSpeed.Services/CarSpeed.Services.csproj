@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarSpeed.Core\CarSpeed.Core.csproj" />
+    <ProjectReference Include="..\CarSpeed.Data\CarSpeed.Data.csproj" />
+  </ItemGroup>
+
+</Project>

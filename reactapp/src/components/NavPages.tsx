@@ -1,9 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { NAV_PAGES } from "../components/constants/NavLinks";
 
-
-
-
 export const NavPages = () => {
     return (
     <nav>
