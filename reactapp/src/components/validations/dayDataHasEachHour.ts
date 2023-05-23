@@ -1,4 +1,4 @@
-import { DayHourSpeed } from "../types/DayHourSpeeds";
+import { DayHourSpeed } from "../types/DayHourSpeed";
 
 export const addHoursWithZeroEntries = (fullDayData: DayHourSpeed[]) => {
     return (

@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { RoadEntries } from "../components/types/RoadEntries";
-import { stringToRoadEntryArray } from "../components/helperFunctions/uploadContentToRoadEntriesList";
+import { lineToRoadEntry, stringToArray, } from "../components/helperFunctions/uploadContentToRoadEntriesList";
 import { SERVER_LINKS } from "../components/constants/ServerUrl";
 import { splitContent } from "../components/helperFunctions/splitInputContentInBatches";
 import { ping } from "../components/helperFunctions/ping";
@@ -27,7 +27,7 @@ export const UploadFile = () => {
 					var reader = new FileReader();
 					reader.onload = function (e) {
 						var content = reader.result as string;
-						setTextEntries(stringToRoadEntryArray(content));
+						setTextEntries(stringToArray(content).map(l => lineToRoadEntry(l)));
 						alert("File content has been read successfully");
 						setIsLoading(false);
 					};

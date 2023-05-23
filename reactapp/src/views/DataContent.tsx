@@ -35,7 +35,6 @@ export const DataContent = () => {
 		setIsLoading(true);
 
 		fetchData();
-		console.log("current filter", currentFilter);
 	}, [currentPage, currentFilter]);
 
 	const fetchData = async () => {
@@ -48,7 +47,7 @@ export const DataContent = () => {
 			});
 
 			const recivedData = await data.json();
-
+			console.log(recivedData);
 			const paginationMeta = JSON.parse(
 				data.headers.get("X-Pagination") as string
 			) as PaginationData;
