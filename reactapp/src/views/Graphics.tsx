@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { SERVER_LINKS } from "../components/constants/ServerUrl";
 import { Line } from "react-chartjs-2";
-import { DayHourSpeed } from "../components/types/DayHourSpeeds";
+import { DayHourSpeed } from "../components/types/DayHourSpeed";
 import { Chart, ChartOptions, registerables } from "chart.js";
 import { ping } from "../components/helperFunctions/ping";
 import { onlyDateFromJsonDateTimeList } from "../components/helperFunctions/editServerDataTime";
