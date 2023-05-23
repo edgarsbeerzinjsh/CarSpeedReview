@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSpeed.Services", "CarSpe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSpeed.WebAPI", "CarSpeed.WebAPI\CarSpeed.WebAPI.csproj", "{11931152-046E-4DC5-9856-D5CE0119ECCF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSpeed.Test", "CarSpeed.Test\CarSpeed.Test.csproj", "{A8F108BA-FA5D-4445-9024-24B3947B47EC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{11931152-046E-4DC5-9856-D5CE0119ECCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11931152-046E-4DC5-9856-D5CE0119ECCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11931152-046E-4DC5-9856-D5CE0119ECCF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8F108BA-FA5D-4445-9024-24B3947B47EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8F108BA-FA5D-4445-9024-24B3947B47EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8F108BA-FA5D-4445-9024-24B3947B47EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8F108BA-FA5D-4445-9024-24B3947B47EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
