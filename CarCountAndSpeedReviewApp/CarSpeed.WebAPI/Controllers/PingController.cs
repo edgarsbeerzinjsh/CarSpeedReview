@@ -8,16 +8,11 @@ namespace CarSpeed.WebAPI.Controllers
     [ApiController]
     public class PingController : ControllerBase
     {
-        public IDbService<CarSpeedEntry> _dbService;
-        public PingController(IDbService<CarSpeedEntry> dbService)
-        {
-            _dbService = dbService;
-        }
 
         [HttpGet]
         public IActionResult GetEntryCount()
         {
-            return Ok(_dbService.GetAll().Count());
+            return Ok("Web api ON");
         }
     }
 }

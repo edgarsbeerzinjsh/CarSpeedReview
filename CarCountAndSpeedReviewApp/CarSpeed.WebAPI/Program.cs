@@ -23,7 +23,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CarSpeedDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("RoadSpeedEntries")));
+    options.UseMySQL(connectionString: builder.Configuration.GetConnectionString("RoadSpeedEntries")));
 builder.Services.AddTransient<ICarSpeedDbContext, CarSpeedDbContext>();
 builder.Services.AddScoped<IDbService<CarSpeedEntry>, DbService<CarSpeedEntry>>();
 builder.Services.AddScoped<ICarSpeedService, CarSpeedService>();
