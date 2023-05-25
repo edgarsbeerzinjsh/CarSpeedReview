@@ -1,3 +1,12 @@
+# CarSpeedReview
+
+Author: Edgars Berzins
+
+## About
+
+CarSpeedReview is a project designed for loading and reviewing statistics related to the number of cars and their average speed on a specific road segment. Users can select records based on specific criteria and view the average speed of cars in a graphical format for a single day.
+Functionality
+
 <p align="center">
   <b> Filter Page </b><br>
   <img src="./Filter_data.gif" alt="Filter page">
@@ -12,15 +21,6 @@
   <b> Upload Page </b><br>
   <img src="./Upload_data.gif" alt="Upload page">
 </p>
-
-# CarSpeedReview
-
-Author: Edgars Berzins
-
-## About
-
-CarSpeedReview is a project designed for loading and reviewing statistics related to the number of cars and their average speed on a specific road segment. Users can select records based on specific criteria and view the average speed of cars in a graphical format for a single day.
-Functionality
 
 ## The CarSpeedReview system provides the following features:
 
