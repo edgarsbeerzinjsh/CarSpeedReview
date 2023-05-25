@@ -1,16 +1,16 @@
 <p align="center">
   <b> Filter Page </b><br>
-  <img src="./Filter_data.GIF" alt="Filter page">
+  <img src="./Filter_data.gif" alt="Filter page">
 </p>
 
 <p align="center">
   <b> Graph Page </b><br>
-  <img src="./Graph_data.GIF" alt="Graph page">
+  <img src="./Graph_data.gif" alt="Graph page">
 </p>
 
 <p align="center">
   <b> Upload Page </b><br>
-  <img src="./Upload_data.GIF" alt="Upload page">
+  <img src="./Upload_data.gif" alt="Upload page">
 </p>
 
 # CarSpeedReview
