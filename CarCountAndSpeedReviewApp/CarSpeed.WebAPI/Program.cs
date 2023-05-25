@@ -10,7 +10,7 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.AllowAnyOrigin()
             .AllowAnyHeader()
             .WithExposedHeaders("X-Pagination")
             .AllowAnyMethod();
@@ -23,12 +23,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CarSpeedDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("RoadSpeedEntries")));
+    options.UseMySQL(connectionString: builder.Configuration.GetConnectionString("RoadSpeedEntries")));
 builder.Services.AddTransient<ICarSpeedDbContext, CarSpeedDbContext>();
 builder.Services.AddScoped<IDbService<CarSpeedEntry>, DbService<CarSpeedEntry>>();
 builder.Services.AddScoped<ICarSpeedService, CarSpeedService>();
 
 var app = builder.Build();
+
+app.UseCors();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -38,8 +40,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseCors();
 
 app.UseAuthorization();
 

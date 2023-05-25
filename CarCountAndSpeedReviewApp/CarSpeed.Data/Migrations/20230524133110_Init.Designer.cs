@@ -3,7 +3,6 @@ using System;
 using CarSpeed.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
@@ -12,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarSpeed.Data.Migrations
 {
     [DbContext(typeof(CarSpeedDbContext))]
-    [Migration("20230520102723_Init")]
+    [Migration("20230524133110_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -21,9 +20,7 @@ namespace CarSpeed.Data.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.5")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
-
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("CarSpeed.Core.Models.CarSpeedEntry", b =>
                 {
@@ -31,17 +28,15 @@ namespace CarSpeed.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
                     b.Property<string>("CarRegistrationNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext");
 
                     b.Property<int>("Speed")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("TimeOfRecord")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
