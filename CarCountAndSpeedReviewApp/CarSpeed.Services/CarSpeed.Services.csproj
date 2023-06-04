@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="7.22.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CarSpeed.Core\CarSpeed.Core.csproj" />
     <ProjectReference Include="..\CarSpeed.Data\CarSpeed.Data.csproj" />
   </ItemGroup>
