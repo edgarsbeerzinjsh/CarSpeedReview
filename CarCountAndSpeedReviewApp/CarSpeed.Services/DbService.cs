@@ -50,7 +50,7 @@ namespace CarSpeed.Services
         public void ClearAll()
         {
             _context.Set<T>().RemoveRange(_context.Set<T>());
-            _context.SaveChanges();
+            //_context.SaveChanges();
         }
     }
 }
